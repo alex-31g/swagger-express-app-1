@@ -7,14 +7,21 @@ const app = express();
 const swaggerOptions = {
   swaggerDefinition: {
     info: {
-      title: "Library API",
+      title: "API title",
       version: "1.0.0",
+      description: "API description",
+      contact: {
+        name: "Noob dev",
+      },
+      servers: ["http://localhost:5000/"],
     },
   },
   apis: ["index.js"],
 };
 
-const swaggerDocs = swaggerJsDoc(swaggerOptions);
+// При использовании "swagger-jsdoc" версии "^4.0.0" - await -> удалить
+const swaggerDocs = await swaggerJsDoc(swaggerOptions);
+
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
 /**
