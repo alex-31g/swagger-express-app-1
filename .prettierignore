@@ -4,4 +4,5 @@
 *.md
 *.html
 *.yml
+*.yaml
 tsconfig.json
