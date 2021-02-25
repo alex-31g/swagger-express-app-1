@@ -19,7 +19,7 @@ const swaggerOptions = {
   apis: ["index.js"],
 };
 
-// При использовании "swagger-jsdoc" версии "^4.0.0" - await -> удалить
+// При использовании "swagger-jsdoc" версии "^4.0.0" - удалить await
 const swaggerDocs = await swaggerJsDoc(swaggerOptions);
 
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
