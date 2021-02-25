@@ -1,0 +1,47 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "App title",
+    "description": "Description app"
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Books",
+      "description": "API for books"
+    }
+  ],
+  "paths": {
+    "/books": {
+      "get": {
+        "tags": ["Books"],
+        "description": "Success",
+        "responses": {
+          "200": {
+            "description": "Succes"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Books"],
+        "description": "Create a new book",
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "title",
+            "description": "title of the book",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    }
+  }
+}
